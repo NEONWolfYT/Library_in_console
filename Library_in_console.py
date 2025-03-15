@@ -1,13 +1,12 @@
 import random
 
 
-#book1 = {"id":"15254", "title":"да","author":"да","year":"2006","status":"доступна"}
-
 books = []
 keys = ['id',"название",'автор','год',"статус"]
 id_list = []
 free_books = []
 bron_books = []
+
 
 def book_return(x):
       try:
@@ -23,6 +22,7 @@ def book_return(x):
                   return "Книга не занята!\n"
       except ValueError:
             return "Ошибка: Введите корректный id книги (число)\n"
+
 
 def book_bron(x):
       try:
@@ -49,6 +49,7 @@ def find_book_dict(x):
       else:
             return "Такой книги не существует\n"
 
+
 def gen_id():
       while True:
             id = random.randint(10 ** 6, 10 ** 7)
@@ -56,6 +57,7 @@ def gen_id():
                   id_list.append(id)
                   break
       return id
+
 
 def book_append(title, author, year):
       for book in books:
@@ -68,6 +70,7 @@ def book_append(title, author, year):
       books.append(book_dict)
       free_books.append(book_dict)
       return "Книга добавлена! Её уникальный id: " + str(id)
+
 
 reg = True
 while reg:
